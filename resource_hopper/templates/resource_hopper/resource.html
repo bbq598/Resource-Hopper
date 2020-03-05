@@ -1,0 +1,21 @@
+<{% extends "resource_hopper/base.html" %}
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<h1>Enter Resource Information</h1>
+
+<form method="post">
+	{% csrf_token %}
+	{{ resourceform | crispy }}
+	<button type="submit">Add Resource</button>
+	</form>
+
+<form method="post">
+	{% csrf_token %}
+	{{ skillform | crispy }}
+	<button type="submit">Set Skills</button>
+	</form>
+
+
+{% endblock content %}
